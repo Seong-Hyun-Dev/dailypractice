@@ -1,0 +1,196 @@
+<!-- ! 헷깔려서 설계 다시 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- ! 디자인 Color System -->
+    <!-- 
+      ! #F7ECDE
+      ! #E9DAC1
+      ! #9ED2C6
+      ! #54BAB9
+     -->
+    <script>
+      // <!-- * ------------------------------------------------ -->
+      // <!-- ! --------------------functions-------------------- -->
+      // <!-- * ------------------------------------------------ -->
+
+      const debounce = (callback, delay) => {
+        let timerId;
+        return (event) => {
+          if (timerId) clearTimeout(timerId);
+          timerId = setTimeout(callback, delay, event);
+        };
+      };
+
+      /*
+        <!-- ! Function : widthRatioCalculator -->
+        <!-- * 명칭 : 비율계산기(높이) -->
+        <!-- * 설명 : 높이를 집어넣으면 가로를 알아서 계산해서 반환한다. -->
+      */
+      function calculateWidth(height) {
+        let calculatedWidth = Math.floor((height * 240) / 370);
+        return calculatedWidth;
+      }
+
+      // console.log(calculateWidth(370));
+
+      function appendChildArray(parent, childArr) {
+        if (!childArr.length) {
+          console.log("childArr배열이 비어있습니다. 종료.");
+        } else {
+          childArr.map((item) => {
+            // console.log("카드추가: ", item);
+            parent.appendChild(item);
+          });
+        }
+      }
+
+      function styleInit(borderOnOff = false) {
+        let style = document.createElement("style");
+        if (borderOnOff === true) {
+          style.innerText = `*{padding:0;margin:0;box-sizing:border-box;border: 1px solid black}`;
+        } else {
+          style.innerText = `*{padding:0;margin:0;box-sizing:border-box;}`;
+        }
+        document.head.append(style);
+      }
+      function makeStyle(target, styleJson) {
+        for (let property in styleJson) {
+          // console.log(property, styleJson[property]);
+          target.style[property] = styleJson[property];
+        }
+      }
+
+      // <!-- * --------------------------------------------------------------------------------- -->
+      function zIndexArrange(cardArr) {
+        // <!-- ! 여기서 부터 시작 -->
+      }
+      // <!-- * --------------------------------------------------------------------------------- -->
+
+      function makeCardArr(cardNumber) {
+        const cardArr = [];
+        const randomColor = ["#16213E", "#0F3460", "#533483", "#E94560"];
+
+        for (let i = 0; i < cardNumber; i++) {
+          let cardInstance = document.createElement("div");
+          cardInstance.innerText = `${i + 1}`;
+          makeStyle(cardInstance, {
+            width: `${calculateWidth(30)}vh`,
+            height: `${30}vh`,
+            backgroundColor: `${randomColor[i % 4]}`,
+            position: "absolute",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+            fontSize: "32px",
+            borderRadius: "15px",
+            zIndex: `${i + 1}`,
+          });
+          cardArr.push(cardInstance);
+        }
+        console.log(cardArr);
+        return cardArr;
+      }
+
+      function shuffleCard(cardArr) {
+        let numberOfCard = cardArr.length;
+        // <!-- ! 숫자가 중복되지 않도록 카드를 셔플 -->
+        // <!-- ** 배열 초기화 -->
+        let arr = [];
+        for (let i = 0; i < numberOfCard; i++) {
+          arr[i] = i;
+        }
+        // <!-- ** 배열 셔플 -->
+        let shuffleTimes = Math.floor(Math.random() * 500 + 40);
+        for (let i = 0; i < shuffleTimes; i++) {
+          let num1 = Math.floor(Math.random() * numberOfCard);
+          let num2 = Math.floor(Math.random() * numberOfCard);
+          while (num1 === num2) {
+            num2 = Math.floor(Math.random() * numberOfCard);
+          }
+          // console.log(num1, num2);
+          [cardArr[num1].style.zIndex, cardArr[num2].style.zIndex] = [
+            cardArr[num2].style.zIndex,
+            cardArr[num1].style.zIndex,
+          ];
+        }
+
+        // console.log(arr);
+      }
+
+      // <!-- * --------------------------------------------------------------------------------- -->
+      // <!-- ! ------------------------------------Code Start----------------------------------- -->
+      // <!-- * --------------------------------------------------------------------------------- -->
+
+      styleInit();
+      const root = document.getElementById("root");
+      makeStyle(root, {
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "#F7ECDE",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        // paddingLeft: "2vw",
+        // paddingRight: "2vw",
+      });
+
+      // <!-- *--------------------------------- -->
+      // <!-- !-------------player-------------- -->
+      // <!-- *--------------------------------- -->
+      const players = document.createElement("div");
+      makeStyle(players, {
+        width: "100%",
+        height: "32vh",
+        backgroundColor: "#E9DAC1",
+      });
+
+      // <!-- *--------------------------------- -->
+      // <!-- !-------------dealer-------------- -->
+      // <!-- *--------------------------------- -->
+      const dealer = document.createElement("div");
+      makeStyle(dealer, {
+        width: "100%",
+        height: "36vh",
+        backgroundColor: "#9ED2C6",
+        display: "flex",
+        flexDirection: "row",
+        // justifyContent: "flex-start",
+        justifyContent: "center",
+        alignItems: "center",
+        // paddingLeft: "50px",
+      });
+
+      let cardArr = makeCardArr(52);
+      let leftCards = [];
+      let rightCards = [];
+      appendChildArray(dealer, cardArr);
+
+      // <!-- ? 맨 윗장카드 z-index로 선별 후 카드 위쪽으로 올리기-->
+      let firstCard = cardArr.filter((card) => card.style.zIndex > 51)[0];
+      // console.log(firstCard);
+      firstCard.addEventListener("click", () => {});
+
+      // <!-- *--------------------------------- -->
+      // <!-- !-------------myStatus------------ -->
+      // <!-- *--------------------------------- -->
+      const myStatus = document.createElement("div");
+      makeStyle(myStatus, {
+        width: "100%",
+        height: "32vh",
+        backgroundColor: "#54BAB9",
+      });
+
+      appendChildArray(root, [players, dealer, myStatus]);
+    </script>
+  </body>
+</html>

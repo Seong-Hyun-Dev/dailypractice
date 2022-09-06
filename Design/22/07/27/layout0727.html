@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 다 끝나면 클래스로 flex묶어보기 */
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+      header {
+        width: 100vw;
+        height: 15vh;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: row;
+      }
+
+      header > #header-left-wrap {
+        width: 35vw;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      header > #header-right-wrap {
+        width: 65vw;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      header > #header-left-wrap > #logo-box {
+        width: 538px;
+        height: 100px;
+        /* border: 1px solid black; */
+        /* margin-left: 112px; */
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        font-size: 24px;
+      }
+
+      header > #header-left-wrap > #logo-box > #logo-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 18px;
+        /* border: 1px solid black; */
+      }
+
+      header > #header-left-wrap > #logo-box > #logo-name {
+        /* border: 1px solid black; */
+      }
+
+      header > #header-right-wrap > nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        width: 1270px;
+        height: 100px;
+        /* background-color: aliceblue; */
+      }
+      header > #header-right-wrap > nav > ul {
+        display: flex;
+        list-style-type: none;
+        /* border: 1px solid black; */
+      }
+      header > #header-right-wrap > nav > ul > li {
+        font-size: 16px;
+        /* margin-right: 100px; */
+        margin: 30px;
+        /* border: 1px solid black; */
+      }
+
+      header > #header-right-wrap > #login-box {
+        display: flex;
+
+        height: 100px;
+      }
+
+      main {
+        display: flex;
+        height: 85vh;
+      }
+      main > #main-left-wrap {
+        width: 35vw;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      main > #main-left-wrap > #word-box {
+        position: relative;
+        width: 538px
+      }
+
+      main > #main-left-wrap > #word-box > #word-subject {
+        width: 538px;
+        height: 25vh;
+        /* border: 1px solid black; */
+        font-size: 50px;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        color:rgb(5, 185, 125)
+      }
+      main > #main-left-wrap > #word-box > #word-explain {
+        /* position: absolute; */
+        width: 738px;
+        height: 25vh;
+        /* border: 1px solid black; */
+        color: rgb(5, 185, 125);
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        line-height: 200%;
+        z-index: 1;
+        /* background-color: aliceblue; */
+        opacity: 0.8;
+      }
+      main > #main-left-wrap > #word-box > #button-container {
+        width: 538px;
+        height: 15vh;
+        /* border: 1px solid black; */
+      }
+      main > #main-left-wrap > #word-box > #button-container > button {
+        width: 170px;
+        height: 60px;
+        background-color: rgb(6, 205, 138);
+        color: aliceblue;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      main > #main-left-wrap > #word-box > #link-icon {
+        width: 538px;
+        height: 20vh;
+        /* border: 1px solid black; */
+      }
+      main > #main-left-wrap > #word-box > #link-icon > img{
+        margin: 15px;
+      }
+      main > #main-left-wrap > #word-box > #link-icon > img:nth-child(1){
+        margin-left: 0px;
+      }
+
+      main > #main-right-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65vw;
+        /* border: 1px solid black; */
+      }
+
+      main > #main-right-wrap > img {
+        width:100%;
+        height:100%;
+        /* filter: blur(px); */
+        position: relative;
+        z-index: -1;
+      }
+
+      #link-icon-facebook {
+        width: 30px;
+        height: 30px;
+      }
+      #link-icon-twitter {
+        width: 30px;
+        height: 30px;
+      }
+      #link-icon-instagram {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id="header-left-wrap">
+          <div id="logo-box">
+            <img id="logo-img" src="" alt="" />
+            <div id="logo-name">메인퀘스트 언더독</div>
+          </div>
+        </div>
+        <div id="header-right-wrap">
+          <nav>
+            <ul>
+              <li>규칙</li>
+              <li>메뉴</li>
+              <li>기록하기</li>
+              <li>랭킹게시판</li>
+              <li>질문</li>
+            </ul>
+          </nav>
+          <div id="login-box">
+            <button id="login-button">로그인</button>
+            <button id="sign-up-button">회원가입</button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div id="main-left-wrap">
+          <div id="word-box">
+            <div id="word-subject">당신만의 행복한<br> 순간을 떠올려보세요</div>
+            <div id="word-explain">게시판에 당신의 모든 순간 순간을 기록해보세요.<br>
+              우리는 당신의 행복한 순간과 더 좋은 결정을 위해서 노력합니다.<br>
+              메인퀘스트 언더독은 지금 이 순간에도 앞으로 나아가고 있습니다. </div>
+            <div id="button-container">
+              <button>더 알아보기</button>
+            </div>
+            <div id="link-icon">
+              <img id="link-icon-facebook" src="" alt="">
+              <img id="link-icon-twitter" src="" alt="">
+              <img id="link-icon-instagram" src="" alt="">
+            </div>
+          </div>
+        </div>
+        <div id="main-right-wrap">
+          <img src="./imgs/play.jpg" id="background-picture-box">
+            <!-- 박스에 백그라운드 사진을 포함할 수 있는지? -->
+          </img>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<!-- 피드백 : 텍스트의 메세지도 강한데 사진의 메세지가 너무 강함, 어디에다가 힘을 줄껀지..-->

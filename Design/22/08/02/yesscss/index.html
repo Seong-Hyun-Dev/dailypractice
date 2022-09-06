@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="left">
+          <div id="left-top"></div>
+          <div id="left-down">
+            <div id="left-down-clone">
+              <div id="text">
+                <h1 id="clickText">hello1</h1>
+                <p id="loremIpsum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed corporis reprehenderit, ipsum, sapiente, eveniet consequatur magnam suscipit repellendus corrupti ea esse dicta quisquam ipsam non nihil voluptatum ipsa vitae accusamus?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="main">
+        </div>
+        <div id="right">
+          <div id="right-wrap"></div>
+          <div id="right-top">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div id="right-down"></div>
+        </div>
+    </div>
+    <script>
+      const clickText = document.getElementById("clickText");
+      const leftTop = document.getElementById("left-top")
+      const rightDown = document.getElementById("right-down");
+      clickText.addEventListener("click",function(event){
+        leftTop.style.backgroundColor = "red";
+        rightDown.style.backgroundColor = "red";
+        // console.log(event.target);
+      });
+    </script>
+</body>
+</html>

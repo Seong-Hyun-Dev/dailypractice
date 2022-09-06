@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // div "객체"안에 css의 모든 속성이 담겨있음
+      let root = document.getElementById("root");
+      console.dir(root);
+      // 사용자 정의 객체
+      let coffeeItem = {
+        bean: "커피콩",
+        water: "물",
+        takeout: "테이크아웃잔",
+        milk: "우유",
+        ice: "얼음",
+        maker: "정성",
+      };
+      console.dir(coffeeItem);
+
+      // 객체생성
+      let me = {
+        name: "김성현",
+        age: 33,
+        address: "Daejeon",
+        hobby: "축구",
+      };
+
+      function adult($age) {
+        if ($age > 19) {
+          console.log("성인");
+        } else {
+          console.log("키드");
+        }
+      }
+      adult(me.age);
+    </script>
+  </body>
+</html>

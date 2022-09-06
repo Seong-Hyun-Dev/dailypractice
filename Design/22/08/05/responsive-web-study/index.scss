@@ -1,0 +1,439 @@
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // border: 1px solid black;
+}
+
+#wrap {
+  & > #top-view {
+    & > #header {
+      width: 100vw;
+      padding-left: 37px;
+      padding-right: 37px;
+      padding-top: 50px;
+      padding-bottom: 24px;
+      height: 93px;
+      background-color: #2196f3;
+      & > #header-content {
+        width: 100%;
+        height: 20px;
+        background-color: antiquewhite;
+      }
+    }
+    & > #menu-bar {
+      width: 100vw;
+      height: 50px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > #symbol-box-k {
+        width: 189px;
+        height: 35px;
+        border-radius: 8px;
+        background-color: #2196f3;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      & > #next-direction {
+        width: 50px;
+        height: 50px;
+        // background-color: red;
+        position: absolute;
+        right: 0;
+      }
+    }
+    & > #menu-on {
+      width: 100vw;
+      height: 156px;
+      background-color: #cdcdcd;
+      & > ul {
+        height: 92px;
+        // background-color: aqua;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 9.68px;
+        color: #004ea2;
+        list-style-type: disc;
+        position: relative;
+        font-style: normal;
+        top: 37px;
+        left: 133px;
+        & > li {
+          margin-bottom: 6px;
+        }
+      }
+    }
+    & > #first-introduction {
+      width: 100vw;
+      height: 828px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > #word-box {
+        width: 359px;
+        height: 154px;
+        position: relative;
+        top: 129px;
+        & > #big-word {
+          font-size: 64px;
+          font-weight: 700;
+          line-height: 77px;
+          letter-spacing: -0.05em;
+          color: #2196f3;
+          & > #small-word {
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 10px;
+            letter-spacing: normal;
+            color: #2196f3;
+            position: absolute;
+            top: 100px;
+            margin-left: 3px;
+            & > div {
+              top: 10px;
+              display: inline-block;
+              width: 120px;
+              height: 64px;
+            }
+          }
+        }
+      }
+      & > #three-line {
+        display: flex;
+        position: relative;
+        top: 140px;
+        & > #first-box {
+          width: 10px;
+          height: 2px;
+          background-color: #cdcdcd;
+          margin-right: 40px;
+        }
+        & > #second-box {
+          width: 33px;
+          height: 2px;
+          background-color: #cdcdcd;
+          margin-right: 11px;
+        }
+        & > #third-box {
+          width: 115px;
+          height: 2px;
+          background-color: #cdcdcd;
+        }
+      }
+      & > #bottom-box {
+        position: relative;
+        top: 443px;
+        & > #three-circle-box {
+          display: flex;
+          justify-content: center;
+          & > div {
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #d9d9d9;
+            margin: 5px;
+          }
+          & > div:nth-child(1) {
+            background-color: #2196f3;
+          }
+        }
+        & > #bottom-box-word {
+          width: 278px;
+          height: 40px;
+          color: #2196f3;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  & > #main {
+    & > #content-explain {
+      width: 100vw;
+      height: 871px;
+      background-color: #2196f3;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & > #tmp {
+        width: 100vw;
+        height: 300px;
+      }
+      & > #explain-box {
+        // 태블릿 -> 281px
+        width: 320px;
+        color: #ffffff;
+        position: relative;
+        left: -25px;
+        & > #big-word-box {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 39px;
+        }
+        & > #small-word {
+          margin-top: 12px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+      & > #middle-box {
+        width: 370px;
+        margin-top: 33px;
+        margin-left: 30px;
+        & > #bar {
+          width: 355px;
+          border: 1px solid #fefefe;
+        }
+        & > #word-wrap {
+          display: flex;
+          & > #big-word {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 19px;
+            color: #ffffff;
+            position: relative;
+            top: 4px;
+          }
+          & > #small-word {
+            width: 222px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 11px;
+            color: #ffffff;
+            margin: 8px;
+          }
+        }
+      }
+
+      & > #arrow-box {
+        margin-top: 50px;
+        width: 10px;
+        height: 10px;
+        background-color: #fefefe;
+      }
+
+      & > #button-box {
+        margin: 31px;
+        width: 394px;
+        height: 120px;
+        // border: 1px solid black;
+        & > div {
+          background-color: #ffffff;
+          height: 21px;
+          display: inline-block;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 8px;
+          padding: 10px;
+          color: #2196f3;
+          margin: 4px;
+          border-radius: 16.5px;
+          text-align: center;
+          line-height: 5px;
+        }
+      }
+    }
+    & > #content-invitation {
+      width: 100vw;
+      height: 871px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #cdcdcd;
+      & > #invitation-wrap {
+        width: 100%;
+        // background-color: #004ea2;
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & > #invitation-bigword {
+          width: 90%;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 64px;
+          line-height: 100%;
+        }
+        & > #invitation-boxes {
+          width: 486px;
+          display: flex;
+          justify-content: space-around;
+          position: relative;
+          left: 60px;
+          top: 100px;
+          & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          & > #invitation-box-one {
+            width: 149px;
+            height: 239px;
+            background: #2196f3;
+            border-radius: 15px;
+            text-align: center;
+            & > #invitation-subject {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 185.52%;
+              color: #ffffff;
+            }
+            & > #invitation-text {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 100%;
+              color: #ffffff;
+            }
+          }
+          & > #invitation-box-two {
+            width: 149px;
+            height: 239px;
+            background: rgba(33, 150, 243, 0.8);
+            border-radius: 15px;
+            text-align: center;
+            & > #invitation-subject {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 185.52%;
+              color: #ffffff;
+            }
+            & > #invitation-text {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 100%;
+              color: #ffffff;
+            }
+          }
+          & > #invitation-box-three {
+            width: 149px;
+            height: 239px;
+            background: #2196f3;
+            border-radius: 15px;
+            text-align: center;
+            & > #invitation-subject {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 185.52%;
+              color: #ffffff;
+            }
+            & > #invitation-text {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 100%;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > #footer {
+    height: 250px;
+    background-color: #2196f3;
+    padding-left: 23px;
+    padding-right: 17px;
+    & > #subject {
+      width: 100vw;
+      height: 67px;
+      border: 1px solid black;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      & > #subject-box {
+        width: 200px;
+        height: 16px;
+        // background-color: #004ea2;
+        font-size: 15px;
+        color: #fefefe;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// #wrap {
+//   & > #header {
+//     width:100vw;
+//     padding-left: 37px;
+//     padding-right: 37px;
+//     padding-top: 50px;
+//     padding-bottom: 24px;
+//     & > top {
+//       width: 100vw;
+//       height: 93px;
+//       background-color: #2196F3;
+//     }
+//     & > menu-bar {
+//       width:100vw;
+//       height: 50px;
+//       background-color: #FFFFFF;
+//     }
+//     & > menu-on {
+//       width:100vw;
+//       height:156px;
+//       background-color: #CDCDCD;
+//     }
+//     & > first-introduction {
+//       width:100vw;
+//       height:828px;
+//       background-color: #FFFFFF;
+//     }
+//   }
+//   & > #main {
+//     & > #content-explain {
+//       width:100vw;
+//       height:871px;
+//       background-color: #2196F3;
+//     }
+//     & > #content-invitation {
+//       width:100vw;
+//       height:871px;
+//       background-color: #FFFFFF;
+//     }
+//   }
+
+//   & > #footer {
+//     & > #footer-content {
+//       width: 100vw;
+//       height: 439px;
+//       background-color: #2196F3;
+//     }
+//   }
+// }

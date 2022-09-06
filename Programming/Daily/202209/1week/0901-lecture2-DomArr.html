@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+
+      root.style.width = "100vw";
+      root.style.height = "100vw";
+      root.style.backgroundColor = "100vw";
+
+      console.dir(root.style);
+
+      const dom = [];
+      const name = ["피카츄", "파이리", "꼬부기", "아구몬", "태일이"];
+      name.map((n, i) => {
+        dom.push(`<div id="test-${i + 1}">${name[i]}</div>`);
+      });
+      console.log(dom.join("\n")); // join안에 파라미터는 "구분자"
+      root.innerHTML = dom.join("");
+
+      //!! 위 코드를 makeTag(템플릿리터럴에 의한 태그생성)의 원리를 이용해서 함수를 만들면?
+    </script>
+  </body>
+</html>

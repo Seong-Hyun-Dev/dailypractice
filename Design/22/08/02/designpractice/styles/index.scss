@@ -1,0 +1,18 @@
+// 구동 명령어 : sass --no-source-map --watch index.scss index.css
+
+//scss - @mixin 문법
+@mixin flex-setting($flex,$justify,$align){
+  display:$flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin all-view($width : 100vw ,$height : 100vh) {
+  width: $width;
+  height: $height;
+}
+
+#root {
+  @include flex-setting(flex,center,center);
+  @include all-view;
+}

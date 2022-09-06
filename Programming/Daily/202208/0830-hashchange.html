@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    const container = document.querySelector("#app");
+    <script>
+      window.addEventListener("hashchange", () => {
+        console.log(location.hash);
+      });
+
+      class Router {
+        #routes; // ! private 변수, 여러 hash값과 그에 해당하는 컴포넌트를 매칭할 객체
+        get routes() {
+          return this.#routes;
+        }
+
+        constructor() {
+          this.#routes = {};
+          window.addEventListener("hashchange", () => this.push(location.hash));
+        }
+
+        add = (hash, component) => {
+          this.#routes[hash] = component;
+        };
+
+        push = (hash) => {
+          if (this.#routes.hasOwnProperty(hash)) {
+            this.#routes[hash]();
+          }
+        };
+      }
+
+      class Home {
+        constructor(container) {
+          const template = `
+            <div>
+              <h1>Home Menu</h1>
+            </div>
+            <div>
+              <a href="#info">정보 화면으로</a>
+            </div>
+          `;
+          container.innerHTML = template;
+        }
+      }
+
+      class Info {
+        constructor(container) {
+          const template = `
+            <div>
+              <h1>Information</h1>
+            </div>
+            <div>
+              <div>
+                반갑습니다!
+              </div>
+              <a href="#home">첫 화면으로</a>
+            </div>
+          `;
+          container.innerHTML = template;
+        }
+      }
+    </script>
+  </body>
+</html>

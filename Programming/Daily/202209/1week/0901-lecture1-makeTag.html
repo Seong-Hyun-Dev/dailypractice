@@ -1,0 +1,36 @@
+<!-- ! -------------------------------------------------------------------------- -->
+<!-- ? 새로운 관점!!! 동적 프론트엔드 패러다임!!! : emplate리터럴로 html 파일을 만든다는 개념!! -->
+<!-- ? 어떤 대단한 개발자가 "복잡하고 다양한 속성들을 문자열로 만들수 있다면 "을 생각했다는 것이 핵심 -->
+<!-- ! -------------------------------------------------------------------------- -->
+
+<!-- !! 여기서부터는 태그만들때 document.createElement함수를 쓰지 않고,-->
+<!-- !! 내가 직접 템플릿 리터럴과 함수를 이용해서 태그를 만든다.-->
+
+<!-- !!! 이 관점을 리액트에서 쓸 수 있다....!!!!!!!!!!!!!(사실 내가 프레임워크를 만들어도 되지만... ) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // 함수
+      function makeTagWithTemplateLiteral(tagName, textContent) {
+        return `<${tagName}>${textContent}</${tagName}>`;
+      }
+
+      const root = document.getElementById("root");
+      let test =
+        makeTagWithTemplateLiteral("div", "템플릿 리터럴로 태그생성") +
+        makeTagWithTemplateLiteral("article", "중간에 추가할 수도 있어!!!") +
+        makeTagWithTemplateLiteral("p", "더하기가능");
+      console.log(test);
+      root.innerHTML = test;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+      }
+    </style>
+    <title>Promise Examples1</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = "white";
+      root.style.display = "flex";
+      root.style.alignItems = "center";
+      const circle1 = document.createElement("div");
+      circle1.style.width = "200px";
+      circle1.style.height = "200px";
+      circle1.style.backgroundColor = "red";
+      circle1.style.borderRadius = "200px";
+      circle1.style.margin = "100px";
+      circle1.style.position = "relative";
+
+      circle1.addEventListener("click", function () {
+        let widthLength = 0;
+        let iid = setInterval(function () {
+          widthLength = widthLength + 1;
+          circle1.style.left = `${widthLength}vw`;
+
+          if (widthLength > 30) {
+            // 원이 하나더 생기고
+          }
+
+          if (widthLength === 80) {
+            clearInterval(iid);
+            let iiid = setInterval(function () {
+              widthLength = widthLength - 1;
+              circle1.style.left = `${widthLength}vw`;
+
+              if (widthLength < 50) {
+                // 원이 사라진다.
+              }
+
+              if (widthLength <= 0) {
+                clearInterval(iiid);
+              }
+            }, 20);
+          }
+        }, 20);
+      });
+      root.appendChild(circle1);
+    </script>
+  </body>
+</html>

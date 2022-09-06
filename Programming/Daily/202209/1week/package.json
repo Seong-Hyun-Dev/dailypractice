@@ -1,0 +1,17 @@
+{
+  "name": "1week",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0901-quest2-ArrMethod.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Basic 문제
+      let one = Math.floor(Math.random() * 20 + 1);
+      let two = Math.floor(Math.random() * 20 + 1);
+      let three = Math.floor(Math.random() * 20 + 1);
+      let result = Math.floor((one + two + three) / 3);
+      if (result >= 10) {
+        console.log("under");
+      } else {
+        console.log("over");
+      }
+
+      // ! 중복되지 않은 난수 만들기
+      function random_notDup() {
+        let a = Math.floor(Math.random() * 20 + 1);
+        let b = Math.floor(Math.random() * 20 + 1);
+        let c = Math.floor(Math.random() * 20 + 1);
+
+        while (b === a || b === c) {
+          b = Math.floor(Math.random() * 20 + 1);
+        }
+        while (c === a || c === b) {
+          c = Math.floor(Math.random() * 20 + 1);
+        }
+
+        let inputData = [];
+        inputData.push(a, b, c);
+        return inputData;
+      }
+
+      // ! 테스트해보기
+      let count = 0;
+      let arr = [];
+      for (let i = 0; i < 1000000; i++) {
+        // console.log(random_notDup());
+        arr = [...random_notDup()];
+        if (arr[0] === arr[1] || arr[0] === arr[2] || arr[1] === arr[2]) {
+          ++count;
+        }
+      }
+      console.log(count);
+    </script>
+  </body>
+</html>

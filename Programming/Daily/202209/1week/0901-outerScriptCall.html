@@ -1,0 +1,19 @@
+<!-- ? !: script태그로 외부js파일을 로드하는 방법 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- ! 여기서 script태그 src로 외부js파일을 로드해서 Body에서 함수를 사용할 것 이다. -->
+    <!-- !! async, defer를 사용하면 가능하지 않음! -->
+    <script src="./test/myscript.js"></script>
+  </head>
+  <body>
+    <!-- ! 여기서 myscript.js안의 newFunction() 함수를 사용가능 -->
+    <script>
+      newFunction();
+    </script>
+  </body>
+</html>

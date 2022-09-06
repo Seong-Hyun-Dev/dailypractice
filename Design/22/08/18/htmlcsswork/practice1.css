@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+}
+#wrap > #menubar {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+#wrap > #menubar > #logo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrap > #menubar > #highlight-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+  height: 50px;
+}
+#wrap > #menubar > #buttons {
+  display: flex;
+}
+#wrap > #menubar > #buttons > div {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+#wrap > #content {
+  height: calc(100vh - 130px);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#wrap > #content > #main {
+  width: 79.3vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#wrap > #content > #main > #main-word-box {
+  width: 52.5%;
+  height: 100%;
+}
+#wrap > #content > #main > #main-word-box > #main-word-content {
+  height: 71.3%;
+}
+#wrap > #content > #main > #main-word-box > #main-word-side {
+  height: 28.7%;
+  background-color: white;
+}
+#wrap > #content > #main > #main-picture-box {
+  width: 47.5%;
+  height: 100%;
+}
+#wrap > #content > #side {
+  width: 20.7vw;
+  height: 100%;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      initStyle();
+      const root = document.getElementById("root");
+      makeStyle(root, {
+        id: "root",
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "white",
+      });
+
+      makeElement({
+        element: "div",
+        innerText: null,
+      });
+
+      function makeElement(infoObj, styleObj = null) {
+        if (!infoObj["element"]) {
+          console.log("element가 없어서 종료합니다");
+          return -1;
+        }
+        let element = document.createElement(infoObj["element"]);
+        for (let key in infoObj) {
+          if (key === "element") {
+            continue;
+          } else if (key === "innerText") {
+            element.innerText = infoObj[key];
+          } else {
+          }
+        }
+
+        if (!styleObj) {
+        }
+      }
+
+      function makeStyle(element, styleObj) {
+        // class추가는 어떻게 함?
+        for (let key in styleObj) {
+          if (key === "id") {
+            element.id = styleObj[key];
+          } else {
+            element.style[key] = styleObj[key];
+          }
+        }
+      }
+
+      function initStyle() {
+        const style = document.createElement("style");
+        // console.log(style);
+        style.innerHTML = ` * { padding: 0; margin: 0; } `;
+        document.head.append(style);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!-- ! 이 코드에서 에러가 났던 이유 : 함수를 호출할 때, 파라미터 값을 넣어주지 않았다. 이 소스는 에러상태로 놔두겠다. -->
+<!-- ! 추후에 0901-callback을 보고 에러를 다시 해결해보기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function loadScript(src, callback) {
+        let script = document.createElement("script");
+        script.src = src;
+        script.onload = function () {
+          callback(script);
+        };
+
+        document.head.append(script);
+      }
+      loadScript("./examsrc/myscript.js", function () {
+        // !! 여기에 script가 전달되어야 함.
+        newFuntion();
+      });
+    </script>
+  </body>
+</html>

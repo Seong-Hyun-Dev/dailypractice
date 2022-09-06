@@ -1,0 +1,24 @@
+<!-- * -------------------------------------------------------->
+<!-- ! 주제 : 빌트인 객체를 만들고 일반 객체로 직접 빌트인 객체처럼 만들어보기 -->
+<!-- * -------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // <!-- * 스트링 빌트인 객체 -->
+      const strObj = new String();
+      console.log(strObj);
+      // <!-- * 따라만들기 with 생성자 함수-->
+      function String2() {
+        this.length = 0;
+      }
+      console.log(new String2());
+    </script>
+  </body>
+</html>

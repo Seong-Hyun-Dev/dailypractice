@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="id1"></div>
+      <div id="id2"></div>
+      <div id="id3"></div>
+    </div>
+    <script>
+      const wrap = document.getElementById("wrap");
+      wrap.id = "wrap";
+      wrap.style.width = "1000px";
+      wrap.style.height = "100px";
+      wrap.style.backgroundColor = "pink";
+      wrap.style.display = "flex";
+      const id1 = document.getElementById("id1");
+      const id2 = document.getElementById("id2");
+      const id3 = document.getElementById("id3");
+    </script>
+  </body>
+</html>

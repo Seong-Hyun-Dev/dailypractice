@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let a = setTimeout(() => {
+      //   console.log("a");
+      // }, 3000);
+      // let b = setTimeout(() => {
+      //   console.log("b");
+      // }, 2000);
+      // let c = setTimeout(() => {
+      //   console.log("c");
+      // }, 1000);
+
+      // Q1. 원래는 c, b, a 출력 => 여기서 a, b, c으로 나오도록 제어를 해봐라!
+      const promise = new Promise((res) => {
+        res();
+      });
+      promise.then(() => {
+        setTimeout(() => {
+          console.log("b");
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

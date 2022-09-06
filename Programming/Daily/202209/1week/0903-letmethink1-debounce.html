@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // <!-- * --------------------------------------------- -->
+      // <!-- ! 클로저 함수는 맨 위에 있어야 실행이 된다 -->
+      // <!-- ! 클로저와 관련이 있는데, 무엇을 의미하는지 아직모름 -->
+      // <!-- * --------------------------------------------- -->
+
+      const debounce = (callback, delay) => {
+        let timerId;
+        return (event) => {
+          if (timerId) clearTimeout(timerId);
+          timerId = setTimeout(callback, delay, event);
+        };
+      };
+      const root = document.getElementById("root");
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.display = "flex";
+      root.style.flexDirection = "column";
+      root.style.justifyContent = "center";
+      root.style.alignItems = "center";
+      const button = document.createElement("button");
+      button.innerText = "button";
+      button.style.width = "150px";
+      button.style.height = "80px";
+      button.style.backgroundColor = "red";
+      button.style.color = "white";
+      button.style.fontSize = "32px";
+      button.style.margin = "100px";
+      root.appendChild(button);
+      const textbox = document.createElement("div");
+      textbox.innerText = 0;
+      textbox.style.fontSize = "32px";
+      textbox.style.color = "red";
+      root.appendChild(textbox);
+
+      button.addEventListener(
+        "click",
+        debounce((event) => {
+          textbox.textContent = +textbox.textContent + 1;
+        }, 500)
+      );
+      // function debounce(callback, delay) {
+      //   let timerId;
+      //   return function (event) {
+      //     if (timerId) clearTimeout(timerId);
+      //     setTimeout(callback, delay, event);
+      //   };
+      // }
+    </script>
+  </body>
+</html>

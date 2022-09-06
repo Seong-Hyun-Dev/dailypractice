@@ -1,0 +1,45 @@
+<!-- ! styleAppend 함수 생성 -->
+<!-- ? styleAppend함수를 연속을 사용했을때 정상적으로 동작하는지 실험 : Okay -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">hello</div>
+    <script>
+      const root = document.getElementById("root");
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = "pink";
+
+      function styleAppend(target, styleJson) {
+        for (let property in styleJson) {
+          target.style[property] = styleJson[property];
+        }
+      }
+      styleAppend(root, {
+        height: "50vh",
+        backgroundColor: "red",
+      });
+
+      styleAppend(root, {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* 두가지 디자인 반응형 작업 프로세스 */
+/*   1. 공통적인것 작업? => 모바일, PC */
+/*   2. 모바일 => Tablet => PC */
+/* 오늘의 반응형 작업 프로세스 => CHOICE : 2. 모바일 => Tablet => PC */
+/* Mobile */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* color: white; */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+#root > #page-top > header {
+  background-color: black;
+  /* background-color: aliceblue; */
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  width: 90%;
+  margin: 0 auto;
+}
+#root > #page-top > header > #logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root > #page-top > header > #logo > #logo-icon {
+  width: 30px;
+  height: 40px;
+  background-color: orange;
+}
+#root > #page-top > header > #logo > #logo-text {
+  font-size: 2rem;
+  font-weight: 700s;
+  color: white;
+  margin-bottom: 6px;
+}
+#root > #page-top > header > #menu-texts {
+  width: 80%;
+  height: 264px;
+  color: white;
+  position: absolute;
+  border: 1px solid red;
+  box-shadow: -2px 5px 10px 1px gray;
+}
+#root > #page-top > header > #menu-texts > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  background-color: black;
+  height: 100%;
+  font-size: 20px;
+  text-decoration: underline;
+  -webkit-text-decoration-color: orange;
+          text-decoration-color: orange;
+  padding-bottom: 30px;
+}
+#root > #page-top > header > #menu-texts > ul > li {
+  display: flex;
+  justify-content: center;
+}
+#root > #page-top > header > img {
+  width: 32px;
+  height: 28px;
+}
+
+/* Tablet */
+/* PC *//*# sourceMappingURL=rsnavbar.css.map */

@@ -1,0 +1,96 @@
+// 활용해볼것 : @mixin, 변수, 굳이 하자면 for문정도
+
+/* 두가지 디자인 반응형 작업 프로세스 */
+/*   1. 공통적인것 작업? => 모바일, PC */
+/*   2. 모바일 => Tablet => PC */
+
+
+/* 오늘의 반응형 작업 프로세스 => CHOICE : 2. 모바일 => Tablet => PC */
+/* Mobile */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* color: white; */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+
+  & > #page-top {
+    & > header {
+      background-color: black;
+      /* background-color: aliceblue; */
+      height: 96px;
+      display: flex;
+      justify-content: space-between;
+      align-items: top;
+      width: 90%;
+      margin: 0 auto;
+      & > #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        & > #logo-icon {
+          width: 30px;
+          height: 40px;
+          background-color: orange;
+        }
+  
+        & > #logo-text {
+          font-size: 2rem;
+          font-weight: 700s;
+          color: white;
+          margin-bottom: 6px;
+        }
+      }
+      & > #menu-texts {
+        width: 80%;
+        height: 264px;
+        color: white;
+        position: absolute;
+        border: 1px solid red;
+        box-shadow: -2px 5px 10px 1px gray ;
+        // box-shadow: x,y,blur,spread,color
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          list-style: none;
+          background-color: black;
+          height: 100%;
+          font-size: 20px;
+          text-decoration: underline;
+          text-decoration-color: orange;
+          padding-bottom: 30px;
+          & > li{
+            display: flex;
+            justify-content: center;
+          }
+        }
+  
+  
+      }
+  
+      & > img {
+        width: 32px;
+        height: 28px;
+      }
+  
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 744px) {
+
+}
+
+/* PC */
+@media (min-width: 960px) {
+
+}

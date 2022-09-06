@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  <!-- ! Function : debounce -->
+      /*
+        <!-- ! 주의사항!!!!!!!!!!! : 아직 이해 못함 -->
+        <!-- ? 다바운스와 스로틀은 클로저를 기반으로 동작한다. -->
+        <!-- ?? 디바운스 : 짧은 시간동안 과도한 이벤트 발생이 생기면, 이벤트를 그룹으로 묶어서 한번만 인식한다 -->
+        <!-- ?? 스로틀 : 짧은 시간동안 과도한 이벤트 발생이 생기면, 이벤트를 그룹으로 묶어서 정해진 시간 동안 1번씩만 인식한다. -->
+      // */
+      // <!-- ? Q1. 애로우 함수를 꼭 써야하는지?  -->
+      // <!-- ? Q2. 클로저가 뭔지?  -->
+      // <!-- ? Q3. 클로저 함수를 사용할 때 맨위에 써야하는 이유?  -->
+      // <!-- ? Q4. 이 함수의 의미?  -->
+      const debounce1 = (callback, delay) => {
+        let timerId;
+        return (event) => {
+          if (timerId) clearTimeout(timerId);
+          timerId = setTimeout(callback, delay, event);
+        };
+      };
+
+      function debounce2(callback, delay) {
+        let timerId; // <!-- ! 디바운스 함수는 timerId를 기억하는 클로저를 반환한다. -->
+        return function (event) {
+          // <!-- ! delay가 경과하기 이전에 이벤트가 발생하면 이전 타이머를 취소하고 새로운 타이머를 재설정한다. -->
+          // <!-- ?? * return이 함수? addEventListener에서 callback함수를 요구하고 그 내부에서 콜백함수를 -->
+          // <!-- ?? 실행하도록 동작하기 때문에 return으로 addEventListener에 function을 전달하면,전달된 함수가 실행된다.-->
+          // <!-- ! 따라서 delay보다 짧은 간격으로 이벤트가 발생하면 callback은 호출되지 않는다. -->
+          if (timerId) clearTimeout(timerId);
+          timerId = setTimeout(callback, delay, event);
+        };
+      }
+    </script>
+  </body>
+</html>

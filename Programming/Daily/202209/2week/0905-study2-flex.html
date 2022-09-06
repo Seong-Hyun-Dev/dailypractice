@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* border: 1px solid black; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap"></div>
+    <script type="module">
+      import MakeStyle from "./myOwnLib/MakeStyle.js";
+      import StyleInit from "./myOwnLib/StyleInit.js";
+      import AppendChildFunc from "./myOwnLib/AppendChildFunc.js";
+
+      StyleInit();
+      const wrap = document.getElementById("wrap");
+      const wrapStyle = {
+        width: "100vw",
+        minWidth: "1024px",
+        height: "100vh",
+        backgroundColor: "pink",
+        display: "flex",
+        flexWrap: "nowrap",
+        gap: "10px",
+        padding: "10px",
+      };
+      MakeStyle(wrap, wrapStyle);
+
+      const childStyle = {
+        flexBasis: "auto",
+        backgroundColor: "white",
+      };
+      const child1 = document.createElement("div");
+      const child2 = document.createElement("div");
+      const child3 = document.createElement("div");
+      MakeStyle(child1, childStyle);
+      MakeStyle(child1, {
+        flexGrow: "1",
+        flexShrink: "2",
+      });
+      MakeStyle(child2, childStyle);
+      MakeStyle(child2, {
+        flexGrow: "1.5",
+        flexShrink: "1",
+      });
+      MakeStyle(child3, childStyle);
+      MakeStyle(child3, {
+        flexGrow: "1",
+        flexShrink: "2",
+      });
+      AppendChildFunc(wrap, [child1, child2, child3]);
+    </script>
+  </body>
+</html>

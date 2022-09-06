@@ -1,0 +1,71 @@
+$cl-black: #122023;
+$cl-milk: #fff7e1;
+$cl-lightgray: #f7f9fa;
+$cl-green: #19ce60;
+$cl-gray: #dae1e6;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  & > #left {
+    width: 40px;
+    height: 100%;
+    background-color: $cl-green;
+    & > #five-circle-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 151px;
+      position: relative;
+      top: 15%;
+      & > div {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        background-color: $cl-milk;
+      }
+    }
+  }
+  & > #right {
+    //! calc함수 사용 시 calc안에서 띄어쓰기 -오퍼레이터 앞뒤로 whitespace!!
+    width: calc(100% - 40px);
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #wrap {
+    & > #left {
+      width: 100px;
+      & > #five-circle-wrap {
+        height: 915px;
+      }
+    }
+    & > #right {
+      width: calc(100% - 100px);
+    }
+  }
+}
+
+@media (min-width: 1728px) {
+  #wrap {
+    & > #left {
+      & > #five-circle-wrap {
+        height: 210px;
+        top: 50%;
+        & > div {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
