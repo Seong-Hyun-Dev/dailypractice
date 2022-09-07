@@ -1,0 +1,160 @@
+<!-- ! 카드셔플해보기 -->
+<!-- * 디자인 Color System -->
+<!--
+
+  ! #54BAB9 : 게임보드 배경화면 색상
+  ! #9ED2C6 : 게임보드 중앙화면 색상
+  ! #A5F1E9 : 내 스테이터스 바 색상
+
+  ! #F7ECDE : 
+  ! #E9DAC1 : 다른 플레이어 자리
+ 
+
+  ! #7FBCD2 : 카드 뒷면
+
+  ! #E1FFEE : 카드 앞면
+  ! #FFEEAF : 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import MakeStyle from "../myOwnLib/MakeStyle.js";
+      import StyleInit from "../myOwnLib/StyleInit.js";
+      import AppendChildArr from "../myOwnLib/AppendChildFunc.js";
+      import ElementMakeSet from "../myOwnLib/ElementMakeSet.js";
+
+      StyleInit(); // margin, padding 초기화
+
+      let root = ElementMakeSet(null, "div", "root", {
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+      });
+
+      let tmpLeft = ElementMakeSet(root, "div", "tmpLeft", {
+        flex: 1,
+      });
+
+      let main = ElementMakeSet(root, "div", "main", {
+        maxWidth: "860px",
+        flex: 1.5,
+        display: "flex",
+        flexDirection: "column",
+      });
+
+      let tmpRight = ElementMakeSet(root, "div", "tmpRight", {
+        flex: 1,
+      });
+
+      // let chatting = ElementMakeSet(root, "div", "chatting", {
+      //   flex: 1,
+      //   display: "flex",
+      // });
+
+      let gameBoard = ElementMakeSet(main, "div", "gameboard", {
+        width: "100%",
+        height: "75vh",
+        backgroundColor: "#54BAB9",
+        display: "flex",
+        // justifyContent: "center",
+        // alignItems: "center",
+        flexDirection: "row",
+        // padding: "20px",
+      });
+
+      let statusBar = ElementMakeSet(main, "div", "statusBar", {
+        width: "100%",
+        height: "25vh",
+        backgroundColor: "#A5F1E9",
+      });
+
+      let left = ElementMakeSet(gameBoard, "div", "left", {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+      });
+
+      let middle = ElementMakeSet(gameBoard, "div", "middle", {
+        flexGrow: 3,
+        display: "flex",
+        flexDirection: "column",
+      });
+
+      let right = ElementMakeSet(gameBoard, "div", "right", {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+      });
+
+      let leftTop = ElementMakeSet(left, "div", "leftTop", {
+        flex: 1,
+      });
+
+      let leftMiddle = ElementMakeSet(left, "div", "leftMiddle", {
+        flex: 1,
+      });
+
+      let leftBottom = ElementMakeSet(left, "div", "leftBottom", {
+        flex: 1,
+      });
+
+      let middleTop = ElementMakeSet(middle, "div", "middleTop", {
+        flex: 1,
+      });
+      let middleMiddle = ElementMakeSet(middle, "div", "middleMiddle", {
+        flex: 4.5,
+        backgroundColor: "#E1FFEE ",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      });
+      let middleBottom = ElementMakeSet(middle, "div", "middleBottom", {
+        flex: 1,
+      });
+
+      let rightTop = ElementMakeSet(right, "div", "rightTop", {
+        flex: 1,
+      });
+      let rightMiddle = ElementMakeSet(right, "div", "rightMiddle", {
+        flex: 1,
+      });
+      let rightBottom = ElementMakeSet(right, "div", "rightBottom", {
+        flex: 1,
+      });
+
+      // <!-- ! middleMiddle에 카드 추가 -->
+      // let card1 = ElementMakeSet(middleMiddle, "div", "card1", {
+      //   width: "30%",
+      //   height: "30%",
+      //   backgroundColor: "#7FBCD2",
+      //   borderRadius: "10px",
+      // });
+
+      // let card2 = ElementMakeSet(middleMiddle, "div", "card2", {
+      //   width: "30%",
+      //   height: "30%",
+      //   backgroundColor: "#7FBCD2",
+      //   borderRadius: "10px",
+      // });
+
+      // let card3 = ElementMakeSet(middleMiddle, "div", "card3", {
+      //   width: "30%",
+      //   height: "30%",
+      //   backgroundColor: "#7FBCD2",
+      //   borderRadius: "10px",
+      // });
+    </script>
+  </body>
+</html>

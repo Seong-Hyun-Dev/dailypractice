@@ -9,7 +9,7 @@ export default function ElementMakeSet(parent, element, id, style) {
   }
   e.id = id;
   MakeStyle(e, style);
-  if (id !== "root") {
+  if (parent !== null) {
     parent.appendChild(e);
   }
   return e;
