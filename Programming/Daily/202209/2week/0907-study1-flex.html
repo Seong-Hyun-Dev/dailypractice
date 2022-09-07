@@ -1,0 +1,81 @@
+<!-- 
+  ! flex : 1 1 0
+  * -------------
+  ! flex-grow
+  ! flex-shrink
+  ! flex-basis
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: 1px solid black;
+      }
+      html,
+      body {
+        height: 100%;
+        /* <!-- ! width를 선언하지 않았다 --> */
+        /* <!-- ! + width를 선언하지 않으면 자동으로 100%가 선언된다. --> */
+        /* <!-- ! html은 문서의 전체를 가리킨다 --> */
+        /* <!-- ! 100%는 상속관계를 나타낸다 --> */
+        /* background-color: pink; */
+      }
+      #wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      #header {
+        height: 65px;
+        background-color: #00c73c;
+      }
+      #tablist {
+        height: 70px;
+        background-color: aliceblue;
+      }
+      #content {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0px;
+      }
+      #aside {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        background-color: aqua;
+      }
+      #main {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0px;
+        overflow: auto;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- <div id="flex-container">
+        <div id="flex-item1"></div>
+        <div id="flex-item2"></div>
+        <div id="flex-item3"></div>
+      </div> -->
+      <div id="header"></div>
+      <div id="tablist"></div>
+      <div id="content">
+        <div id="aside"></div>
+        <div id="main"></div>
+      </div>
+    </div>
+  </body>
+</html>

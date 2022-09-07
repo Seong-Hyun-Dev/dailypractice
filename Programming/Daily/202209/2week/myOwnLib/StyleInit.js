@@ -1,4 +1,4 @@
-export default function styleInit(borderOnOff = false) {
+export default function StyleInit(borderOnOff = false) {
   let style = document.createElement("style");
   if (borderOnOff === true) {
     style.innerText = `*{padding:0;margin:0;box-sizing:border-box;border: 1px solid black}`;
