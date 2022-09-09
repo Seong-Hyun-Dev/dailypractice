@@ -6,8 +6,8 @@ export default function ElementMakeSet(parent, element, id, style) {
     e = document.getElementById("root");
   } else {
     e = document.createElement(element);
+    e.id = id;
   }
-  e.id = id;
   MakeStyle(e, style);
   if (parent !== null) {
     parent.appendChild(e);

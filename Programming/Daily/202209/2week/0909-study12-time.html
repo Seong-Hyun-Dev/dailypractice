@@ -7,11 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <script type="module">
-      let encodedData = encodeURIComponent("안녕하세요");
-      console.log(encodedData);
-      let decodedData = decodeURIComponent(encodedData);
-      console.log(decodedData);
+    <script>
+      console.time("시간측정");
+      for (let i = 0; i < 10000000; i++) {}
+      console.timeEnd("시간측정");
     </script>
   </body>
 </html>
