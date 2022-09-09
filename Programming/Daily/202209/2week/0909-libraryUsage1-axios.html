@@ -1,0 +1,25 @@
+<!-- 
+  ! cdn방식으로 axios라이브러리를 사용. XMLHttpRequest대신 사용.
+  !! async/await를 사용해서 데이터가져오기!!
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const getData = async () => {
+        let getData = await axios.get(
+          "https://pokeapi.co/api/v2/pokemon/ditto"
+        );
+        console.log(getData);
+      };
+      getData();
+    </script>
+  </body>
+</html>

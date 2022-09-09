@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      // //<!-- ! 2. 프로미스를 Async Await로 바꾸기 -->
+      // <!-- ? 프로미스 형식 -->
+      // axios
+      //   .get("https://pokeapi.co/api/v2/pokemon/ditto")
+      //   .then((result) => {
+      //     console.dir(result);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+
+      //<!-- ? async/await를 사용하고 싶다면 -->
+      //<!-- ?? async함수로 감싸고 await를 사용 -->
+      async function getPokemon() {
+        let data = await axios.get("https://pokeapi.co/api/v2/pokemon/ditto");
+        // console.log(data);
+        return data;
+      }
+      let d = getPokemon();
+      console.log(d); //pending
+    </script>
+  </body>
+</html>
