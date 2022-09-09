@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ! 객체를 JSON 포맷의 문자열로 변환한다 -->
+    <script>
+      function filter(key, value) {
+        return typeof value === "number" ? undefined : value;
+      }
+
+      const obj = {
+        name: "Lee",
+        age: 20,
+        alive: true,
+        hobby: ["travelling", "tennis"],
+      };
+
+      const json = JSON.stringify(obj);
+      // console.log("json : ", json);
+
+      const prettyJson = JSON.stringify(obj, function (key, value) {
+        // <!-- ! 각 프로퍼티를 순회하면서 key, value를 판단해서  -->
+        // <!-- * console.log(`key:${key}, value:${value}`); -->
+        // <!-- ! 만약에 return이 없다면, 한번만 수행하고 종료한다. -->
+        // <!-- ! return으로 undefined가 반환된다면, 프로퍼티를 삭제한다. -->
+        // <!-- ! return으로 value외에 다른값이 반환된다면, 객체가 아닌 그 값을 string으로 반환한다.-->
+        // <!-- ! undefined => 반환하지 않음 -->
+        return typeof value === "number" ? undefined : value;
+      });
+      const parsed = JSON.parse(prettyJson);
+      console.log(typeof parsed, parsed);
+    </script>
+  </body>
+</html>

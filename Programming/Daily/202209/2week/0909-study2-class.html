@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #button {
+        width: 100px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">하품을 해보자!</button>
+    <script>
+      // <!-- ! 1. 생성자 함수를 선언해서 객체 만들기 -->
+      // const Human = function (type) {
+      //   this.type = type || "human";
+      // };
+
+      // Human.isHuman = function (human) {
+      //   return human instanceof Human;
+      // };
+
+      // Human.prototype.breathe = function () {
+      //   alert("h-a-a-a-m");
+      // };
+
+      // // <!-- ! 2. 옛날방식으로 상속하기 -->
+      // // <!-- !! 1. 여기서 상속할 준비 -->
+      // const zero = function (type, firstName, lastName) {
+      //   console.log(this);
+      //   console.log(Human);
+      //   Human.apply(this, arguments);
+      //   this.firstName = firstName;
+      //   this.lastName = lastName;
+      // };
+      // zero();
+      // <!-- !! 2. 상속하기-->
+      // zero.prototype = Object.create(Human.prototype);
+      // zero.prototype.constructor = Zero; //상속
+      // zero.prototype.sayName;
+
+      // const human1 = new Human();
+      // const button = document.getElementById("button");
+      // button.addEventListener("click", function () {
+      //   human1.breathe();
+      // });
+
+      // <!-- !! 클래스를 사용하지 않으면 위는 전부 난해하기만 할뿐...-->
+      class Human {
+        constructor(type = "human") {
+          console.log(this);
+          this.type = type;
+        }
+        static isHuman(human) {
+          return human instanceof Human;
+        }
+
+        breathe() {
+          console.log("haam");
+        }
+      }
+
+      // 상속,
+      class zero extends Human {
+        constructor(type, firstName, lastName) {
+          super(type);
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+        sayName() {
+          super.breathe();
+          console.log(`${this.firstName} ${lastName}`);
+        }
+      }
+
+      const newZero = new Zero("human", "kim", "hyun");
+      Human.isHuman(newZero);
+    </script>
+  </body>
+</html>

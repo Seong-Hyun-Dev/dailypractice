@@ -27,10 +27,10 @@
   <body>
     <div id="root"></div>
     <script type="module">
-      import MakeStyle from "../myOwnLib/MakeStyle.js";
-      import StyleInit from "../myOwnLib/StyleInit.js";
-      import AppendChildArr from "../myOwnLib/AppendChildFunc.js";
-      import ElementMakeSet from "../myOwnLib/ElementMakeSet.js";
+      import MakeStyle from "./myOwnLib/MakeStyle.js";
+      import StyleInit from "./myOwnLib/StyleInit.js";
+      import AppendChildArr from "./myOwnLib/AppendChildFunc.js";
+      import ElementMakeSet from "./myOwnLib/ElementMakeSet.js";
 
       StyleInit(); // margin, padding 초기화
 
@@ -48,7 +48,7 @@
 
       let main = ElementMakeSet(root, "div", "main", {
         maxWidth: "860px",
-        flex: 1.5,
+        flex: 1.8,
         display: "flex",
         flexDirection: "column",
       });

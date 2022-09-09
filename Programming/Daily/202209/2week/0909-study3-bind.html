@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: "kim",
+        age: 23,
+      };
+      const say = function (city) {
+        console.log(`Hello, my name is ${this.name}. I live in ${city}`);
+      };
+      // say("seoul");
+      // <!-- ! 객체가 있는데, 함수를 사용할 때 함수안에서 this를 사용함(이때 this가 window를 가리키고 있으므로..). call,apply를 사용해서 객체를 묶으면 this가 obj로 바뀜  -->
+      // <!-- !! 이때, call은 2번째 파라미터가 문자열, apply는 2번쨰 파라미터가 배열, bind는 1번째 파라미터에 객체만->
+      say.call(obj, "seoul");
+      say.apply(obj, ["seoul"]);
+      const newSay = say.bind(obj);
+      newSay("butsan");
+    </script>
+  </body>
+</html>

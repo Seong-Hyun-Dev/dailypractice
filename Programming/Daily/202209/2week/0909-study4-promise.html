@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const condition = true;
+      // const promise = new Promise((resolve, reject) => {
+      //   if (condition) {
+      //     rosolve("성공");
+      //   } else {
+      //     reject("실패");
+      //   }
+      // });
+
+      // Promise.then((message) => {
+      //   console.log(message);
+      // })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   })
+      //   .finally(() => {
+      //     console.log("무조건");
+      //   });
+
+      const condition = true;
+      const promise = new Promise((resolve, reject) => {
+        if (condition) {
+          resolve("성공");
+        } else {
+          reject("실패");
+        }
+      });
+
+      promise
+        .then((message) => {
+          console.log(message);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          console.log("내가 원하는 문장");
+        });
+
+      // promise에서 리턴을 넘기는 경우?
+      const promise2 = new Promise((resolve, reject) => {
+        resolve("성공");
+      });
+      promise2
+        .then((message) => {
+          console.log(message);
+          return new Promise((resolve, reject) => {
+            resolve("성공2");
+          });
+        })
+        .then((message) => {
+          console.log(message);
+        });
+    </script>
+  </body>
+</html>

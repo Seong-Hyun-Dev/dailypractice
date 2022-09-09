@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // <!-- ! 여기서는 candyMachine이 this를 호출하면 정상적으로 동작함 -->
+      const candyMachine = {
+        status: {
+          name: "node",
+          count: 5,
+        },
+        getCandy() {
+          // console.log(this.status.count);
+          this.status.count--;
+          return this.status.count;
+        },
+      };
+      candyMachine.getCandy();
+      // console.log(candyMachine.status.count);
+
+      // <!-- ! 여기서는 candyMachine이 this를 호출하면 정상적으로 동작하지 않음( 구조분해할당을 사용한 직후 ) -->
+      const candyMachine2 = {
+        status: {
+          name: "node",
+          count: 5,
+        },
+        getCandy() {
+          console.log("here");
+          console.log(this);
+          this.status.count--;
+          return this.status.count;
+        },
+      };
+
+      // <!-- ! 구조분해할당 시전 -->
+      // <!-- ?? : 왜인지는 모르겠으나 함수호출시 this가 작동되지 않는다.. -->
+      const {
+        status: { count },
+        getCandy,
+      } = candyMachine2;
+      const func = getCandy.bind(candyMachine2);
+      func();
+      console.log(count);
+    </script>
+  </body>
+</html>

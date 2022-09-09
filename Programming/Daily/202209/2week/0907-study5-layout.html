@@ -1,0 +1,21 @@
+<!-- 
+  ! 이번에는 레이아웃을 4가지 경우로 나눠서 작성해보자.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import ElementMakeSet from "./myOwnLib/ElementMakeSet.js";
+      import StyleInit from "./myOwnLib/StyleInit.js";
+      StyleInit();
+      ElementMakeSet(null, "div", "root", {});
+    </script>
+  </body>
+</html>
