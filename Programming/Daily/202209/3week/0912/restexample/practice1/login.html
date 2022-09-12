@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /*
+       Color System
+       #FFFFFF
+       #FFF9CA
+       #FFDEB4
+       #FFB4B4
+       #B2A4FF
+      */
+      const root = document.getElementById("root");
+      root.id = "root";
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = " #FFFFFF";
+      root.style.display = "flex";
+      root.style.justifyContent = "center";
+      root.style.alignItems = "center";
+      const loginForm = document.createElement("div");
+      loginForm.id = "loginForm";
+      loginForm.style.width = "500px";
+      loginForm.style.height = "450px";
+      // loginForm.style.backgroundColor = "#B2A4FF";
+      loginForm.style.border = "1px solid #B2A4FF";
+      loginForm.style.display = "flex";
+      loginForm.style.flexDirection = "column";
+      loginForm.style.justifyContent = "center";
+      loginForm.style.alignItems = "center";
+      loginForm.style.borderRadius = "20px";
+      root.appendChild(loginForm);
+      const inputId = document.createElement("input");
+      inputId.id = "inputId";
+      inputId.setAttribute("placeholder", "아이디를 입력하세요");
+      inputId.style.width = "90%";
+      inputId.style.height = "40px";
+      inputId.style.margin = "20px";
+      // inputId.style.backgroundColor = "#FFFFFF";
+      inputId.style.border = "1px solid #B2A4FF";
+      inputId.style.color = "#B2A4FF";
+      inputId.style.fontSize = "20px";
+      inputId.style.padding = "10px";
+      inputId.style.borderRadius = "10px";
+      inputId.classList.add(".placeholder-color");
+      loginForm.appendChild(inputId);
+
+      const inputPw = document.createElement("input");
+      inputPw.id = "inputPw";
+      inputPw.setAttribute("placeholder", "비밀번호를 입력하세요");
+      inputPw.style.width = "90%";
+      inputPw.style.height = "40px";
+      inputPw.style.margin = "20px";
+      // inputPw.style.backgroundColor = "#FFFFFF";
+      inputPw.style.border = "1px solid #B2A4FF";
+      // inputPw.style.border = "none";
+      inputPw.style.color = "#B2A4FF";
+      inputPw.style.fontSize = "20px";
+      inputPw.style.padding = "10px";
+      inputPw.style.borderRadius = "10px";
+      loginForm.appendChild(inputPw);
+
+      const submitButton = document.createElement("button");
+      submitButton.style.width = "90%";
+      submitButton.style.height = "50px";
+      submitButton.style.backgroundColor = "white";
+      submitButton.style.border = "none";
+      submitButton.style.borderRadius = "10px";
+      submitButton.style.margin = "20px";
+      // submitButton.style.color = "#FFFFFF";
+      submitButton.style.color = "#B2A4FF";
+      submitButton.style.border = "1px solid #B2A4FF";
+      submitButton.style.fontSize = "20px";
+      submitButton.textContent = "로그인";
+      loginForm.appendChild(submitButton);
+
+      const pwCheck = document.createElement("a");
+      pwCheck.setAttribute("href", "https://www.naver.com");
+      pwCheck.textContent = "비밀번호를 잊으셨나요?";
+      pwCheck.style.textDecoration = "none";
+      pwCheck.style.color = "#B2A4FF";
+      pwCheck.style.marginTop = "30px";
+      loginForm.appendChild(pwCheck);
+    </script>
+    <script></script>
+  </body>
+</html>
